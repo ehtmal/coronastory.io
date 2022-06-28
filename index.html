@@ -21,6 +21,12 @@
   <script defer type="text/javascript" src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
   <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
   <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.js"></script>
+  <!-- SimpleBar -->
+  <script defer type="text/javascript" src="https://unpkg.com/simplebar@5.1.0/dist/simplebar.min.js"></script>
+  <!-- Polyfill -->
+  <script defer type="text/javascript" src="https://cdn.polyfill.io/v3/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find"></script>
+  <!-- Shufflejs -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Shuffle/5.2.3/shuffle.min.js" integrity="sha512-VHIYn9ssmuPBliadBEgGCTRtCO4agkhQCxiPaTBKaAq0cm2KKpX+PE2klG1VfOHKKcN5eZcev0M3s5V2xXxVew==" crossorigin="anonymous"></script>
 
   <!-- Sinka important CSS -->
   <link rel="stylesheet" href="css/site.css">
@@ -43,6 +49,7 @@
   <script defer type="text/javascript" src="js/classes/story-manager.js"></script>
   <script defer type="text/javascript" src="js/classes/story-map.js"></script>
   <script defer type="text/javascript" src="js/classes/story-player.js"></script>
+  <script defer type="text/javascript" src="js/classes/ranking-bar.js"></script>
   <!-- Sinka Scripts -->
   <script defer type="text/javascript" src="js/main-screen.js"></script>
   
@@ -70,6 +77,12 @@
     <div id="story-player" class="player"></div>
   </div>
 
+  <!-- PC RankingBar -->
+  <div id="pc-ranking">
+    <input id="search-box" type="search" class="search-box" name="search-box" data-i18n="[placeholder]search" placeholder="Search..." />
+    <div id="ranking-container" class="ranking-container"></div>
+  </div>
+
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha256-aAr2Zpq8MZ+YA/D6JtRD3xtrwpEz2IqOS+pWD/7XKIw=" crossorigin="anonymous" />
@@ -79,12 +92,15 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
   <!-- ChartJS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+  <!-- SimpleBar -->
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@5.1.0/dist/simplebar.css" />
 
   <!-- Sinka lesser CSS -->
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/global-summary.css">
   <link rel="stylesheet" href="css/map.css">
   <link rel="stylesheet" href="css/story-player.css">
+  <link rel="stylesheet" href="css/rankingbar.css">
 </body>
 
 </html>

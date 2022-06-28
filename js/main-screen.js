@@ -9,6 +9,7 @@ var $globalSummary = null;
 var $globalStoryManager = null;
 var $storyMap = null;
 var $storyPlayer = null;
+var $rankingBar = null;
 
 /** Class MainScreen */
 var MainScreen = (function () {
@@ -21,8 +22,17 @@ var MainScreen = (function () {
     // Init StoryPlayer
     $storyPlayer = new StoryPlayer("#story-player", $storyMap);
 
+    this.bindingEvents();
+
     // Get data for display
     Repository.fetchData(MainScreen.assignDataCallback);
+  }
+
+  MainScreen.prototype.bindingEvents = function () {
+    // Search RankingBar
+    $('#search-box').on('keyup', Utility.debounce(function () {
+      $rankingBar.search($(this).val());
+    }, 200));
   }
 
   /** Repository fetch data done handler */
@@ -32,6 +42,9 @@ var MainScreen = (function () {
     // Init [GlobalSummary]
     $globalSummary = new GlobalSummary("#global-summary", data.globalData, data.dateArray);
     $globalSummary.update(0);
+    // Init [RankingBar]
+    $rankingBar = new RankingBar('#ranking-container', "#story-player", data.timeSeriesData, data.sidebarData);
+    $rankingBar.update(0);
 
     // Update [BypassDate]
     $bypassDate.updateTime(data.dateArray);
@@ -61,6 +74,8 @@ var MainScreen = (function () {
     $globalSummary.update(timeIndex);
     // Update [BypassDate]
     $bypassDate.updateTimeIndex(timeIndex);
+    // Update RankingBar
+    $rankingBar.update(timeIndex);
     // Update Map Locations
     $storyMap.updateLocationsByTime(timeIndex);
   }
