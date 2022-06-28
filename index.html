@@ -27,6 +27,8 @@
   <script defer type="text/javascript" src="https://cdn.polyfill.io/v3/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find"></script>
   <!-- Shufflejs -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Shuffle/5.2.3/shuffle.min.js" integrity="sha512-VHIYn9ssmuPBliadBEgGCTRtCO4agkhQCxiPaTBKaAq0cm2KKpX+PE2klG1VfOHKKcN5eZcev0M3s5V2xXxVew==" crossorigin="anonymous"></script>
+  <!-- Datepicker -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.9/datepicker.min.js" integrity="sha256-ZfF8n2U/HAoaw9WFo8VCUbLo58Q/goLRQ1TFrf4DA94=" crossorigin="anonymous"></script>
 
   <!-- Sinka important CSS -->
   <link rel="stylesheet" href="css/site.css">
@@ -50,7 +52,10 @@
   <script defer type="text/javascript" src="js/classes/story-map.js"></script>
   <script defer type="text/javascript" src="js/classes/story-player.js"></script>
   <script defer type="text/javascript" src="js/classes/ranking-bar.js"></script>
+  <script defer type="text/javascript" src="js/classes/seekbar.js"></script>
+  <script defer type="text/javascript" src="js/classes/country-modal.js"></script>
   <!-- Sinka Scripts -->
+  <script defer type="text/javascript" src="js/site.js"></script>
   <script defer type="text/javascript" src="js/main-screen.js"></script>
   
 </head>
@@ -83,6 +88,130 @@
     <div id="ranking-container" class="ranking-container"></div>
   </div>
 
+  <!-- CountryModal -->
+  <div id="country-modal" class="modal fade country-modal" tabindex="-1" role="dialog" style="display: none;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body js-custom-scrollbar">
+          <div class="container">
+            <div class="mb-5 mt-4 d-flex mobile-wrap">
+              <!-- Flag and Calendar -->
+              <div class="flag-datetime-container">
+                <div class="flag">
+                  <div class="country-name">&nbsp;</div>
+                </div>
+                <div class="datetime">
+                  <div class="date-count">
+                    <span class="previous"><i class="fas fa-caret-left"></i></span>
+                    <span class="next"><i class="fas fa-caret-right"></i></span>
+                    <div class="text numberFont" data-i18n="day">Day</div>
+                    <div class="js-date-count-text number numberFont"></div>
+                  </div>
+                  <div class="current-date numberFont" data-toggle="datepicker">&nbsp;</div>
+                </div>
+              </div>
+              <!-- Items summary -->
+              <div class="statics">
+                <div class="row">
+                  <!-- Confirmed -->
+                  <div class="col-lg-6 col-xl-6 col-sm-12">
+                    <div class="info-item">
+                      <div class="type-icon"><img src="images/icons/confirmed.svg" class="img-icon"></div>
+                      <div class="content">
+                        <div class="js-confirmed-count number numberFont text-confirmed"></div>
+                        <div class="text">Confirmed</div>
+                      </div>
+                      <i class="js-daily-confirmed-arrow arrow-icon"></i>
+                      <div class="increase">
+                        <div class="js-daily-confirmed-count number numberFont"></div>
+                        <div class="js-daily-confirmed-percent text numberFont"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Active -->
+                  <div class="col-lg-6 col-xl-6 col-sm-12">
+                    <div class="info-item">
+                      <div class="type-icon"><img src="images/icons/active.svg" class="img-icon"></div>
+                      <div class="content">
+                        <div class="js-active-count number numberFont text-active"></div>
+                        <div class="text">Active</div>
+                      </div>
+                      <i class="js-daily-active-arrow arrow-icon"></i>
+                      <div class="increase">
+                        <div class="js-daily-active-count number numberFont"></div>
+                        <div class="js-daily-active-percent text numberFont"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Recovered -->
+                  <div class="col-lg-6 col-xl-6 col-sm-12">
+                    <div class="info-item">
+                      <div class="type-icon"><img src="images/icons/recovered.svg" class="img-icon"></div>
+                      <div class="content">
+                        <div class="js-recovered-count number numberFont text-recovered"></div>
+                        <div class="text">Recovered</div>
+                      </div>
+                      <i class="js-daily-recovered-arrow arrow-icon"></i>
+                      <div class="increase">
+                        <div class="js-daily-recovered-count number numberFont"></div>
+                        <div class="js-daily-recovered-percent text numberFont"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Deaths -->
+                  <div class="col-lg-6 col-xl-6 col-sm-12">
+                    <div class="info-item">
+                      <div class="type-icon"><img src="images/icons/deaths.svg" class="img-icon"></div>
+                      <div class="content">
+                        <div class="js-deaths-count number numberFont text-deaths"></div>
+                        <div class="text">Deaths</div>
+                      </div>
+                      <i class="js-daily-deaths-arrow arrow-icon"></i>
+                      <div class="increase">
+                        <div class="js-daily-deaths-count number numberFont"></div>
+                        <div class="js-daily-deaths-percent text numberFont"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="day-player" class="day-player mb-4"></div>
+
+            <!-- Pictogram chart -->
+            <div class="pictogram-chart mb-5">
+              <p class="mb-0"><b data-i18n="pictogram">PICTOGRAM</b></p>
+              <div class="js-human-chart"></div>
+              <div>
+                <i class="fas fa-male"></i>
+                <span class="pictogram-legend">= 1000</span>
+                <span class="pictogram-legend" data-i18n="people">People</span>
+              </div>
+            </div>
+            
+            <!-- Time Series Chart -->
+            <div class="chart-container mb-5">
+              <p class="country mb-0" data-i18n="time-series">TIME SERIES</p>
+              <div class="js-line-chart-legend custom-legend"></div>
+              <div class="chart line-chart">
+                <canvas class="js-line-chart"></canvas>
+              </div>
+            </div>
+            <!-- Daily Data Chart -->
+            <div class="chart-container mb-4">
+              <p class="country mb-0" data-i18n="daily-data">DAILY DATA</p>
+              <div class="js-bar-chart-legend custom-legend"></div>
+              <div class="chart bar-chart">
+                <canvas class="js-bar-chart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn-close no-outline" data-dismiss="modal"></button>
+      </div>
+    </div>
+  </div>
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha256-aAr2Zpq8MZ+YA/D6JtRD3xtrwpEz2IqOS+pWD/7XKIw=" crossorigin="anonymous" />
@@ -101,6 +230,7 @@
   <link rel="stylesheet" href="css/map.css">
   <link rel="stylesheet" href="css/story-player.css">
   <link rel="stylesheet" href="css/rankingbar.css">
+  <link rel="stylesheet" href="css/country-modal.css">
 </body>
 
 </html>

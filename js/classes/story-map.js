@@ -154,6 +154,15 @@ var StoryMap = (function () {
 
     let tooltipHtml = this.buildTooltipHtml(country, station.country_code, 0);
     marker.bindTooltip(tooltipHtml, { direction: "center", offset: [-115, -150], className: "mytooltip" });
+    marker.on("click", function (e) {
+      // TODO: pass $countryModal & $storyPlayer as object when create somehow...
+      if ($countryModal)
+        $countryModal.show(
+          this.options.countryName,
+          this.options.countryCode,
+          $storyPlayer.getTime()
+        );
+    });
   };
 
   /** Update all Locations: tooltips, raidus, hide/show, weight, color */

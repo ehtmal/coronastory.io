@@ -10,6 +10,7 @@ var $globalStoryManager = null;
 var $storyMap = null;
 var $storyPlayer = null;
 var $rankingBar = null;
+var $countryModal = null;
 
 /** Class MainScreen */
 var MainScreen = (function () {
@@ -45,6 +46,8 @@ var MainScreen = (function () {
     // Init [RankingBar]
     $rankingBar = new RankingBar('#ranking-container', "#story-player", data.timeSeriesData, data.sidebarData);
     $rankingBar.update(0);
+    // Init [CountryModal]
+    $countryModal = new CountryModal("#country-modal", data.timeSeriesData, data.globalData, data.dateArray);
 
     // Update [BypassDate]
     $bypassDate.updateTime(data.dateArray);
