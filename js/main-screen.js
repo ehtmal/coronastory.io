@@ -6,6 +6,8 @@
 // Share global Controls
 var $bypassDate = null;
 var $globalSummary = null;
+var $globalStoryManager = null;
+var $storyMap = null;
 
 /** Class MainScreen */
 var MainScreen = (function () {
@@ -13,6 +15,8 @@ var MainScreen = (function () {
   function MainScreen() {
     // Init [BypassDate]
     $bypassDate = new BypassDate('#bypass-date');
+    // Init [StoryMap]
+    $storyMap = new StoryMap("#global-map");
 
     // Get data for display
     Repository.fetchData(MainScreen.assignDataCallback);
@@ -20,13 +24,35 @@ var MainScreen = (function () {
 
   /** Repository fetch data done handler */
   MainScreen.assignDataCallback = function (data) {
+    // Init [StoryManager]
+    $globalStoryManager = new StoryManager("global", "default", "default", "en", data.timeSeriesData);
+    // Init [GlobalSummary]
+    $globalSummary = new GlobalSummary("#global-summary", data.globalData, data.dateArray);
+    $globalSummary.update(0);
+
     // Update [BypassDate]
     $bypassDate.updateTime(data.dateArray);
     $bypassDate.updateTimeIndex(0);
+    // Update [StoryMap]
+    $storyMap.updateTimeSeriesData(data.timeSeriesData);
+    $storyMap.updateValueMinMax(data.valueMinMax);
+    // Render Map Marker, Tooltip at first day
+    for (country in data.timeSeriesData) {
+      let station = STATION_DATA.find(function (obj) { return obj.name === country });
+      $storyMap.generateStationData(data.timeSeriesData, country, station);
+    }
+  }
 
-    // Init [GlobalSummary]
-    $globalSummary = new GlobalSummary("#global-summary", data.globalData, data.dateArray);
-    $globalSummary.update(0);    
+  /** TimeDimension timeload event handler */
+  MainScreen.timeloadCallback = function (data) {
+    let timeIndex = data.target._currentTimeIndex;
+
+    // Update [GlobalSummary]
+    $globalSummary.update(timeIndex);
+    // Update [BypassDate]
+    $bypassDate.updateTimeIndex(timeIndex);
+    // Update Map Locations
+    $storyMap.updateLocationsByTime(timeIndex);
   }
 
   return MainScreen;

@@ -17,18 +17,30 @@
   <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
   <!-- CountUp-->
   <script defer type="text/javascript" src="vendors/countUp.min.js"></script>
+  <!-- Leaflet -->
+  <script defer type="text/javascript" src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+  <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
 
   <!-- Sinka important CSS -->
   <link rel="stylesheet" href="css/site.css">
   
   <!-- Sinka Resources -->
   <script defer type="text/javascript" src="js/resources/station-data.js"></script>
+  <script defer type="text/javascript" src="js/resources/rules-default.js"></script>
+  <script defer type="text/javascript" src="js/resources/stories-default.js"></script>
+  <script defer type="text/javascript" src="js/resources/prefix-setting.js"></script>
+  <script defer type="text/javascript" src="js/common/constant.js"></script>
   <!-- Sinka Classes -->
+  <script defer type="text/javascript" src="js/utilities/utility.js"></script>
+  <script defer type="text/javascript" src="js/utilities/number-utility.js"></script>
   <script defer type="text/javascript" src="js/utilities/date-utility.js"></script>
   <script defer type="text/javascript" src="js/utilities/string-utility.js"></script>
   <script defer type="text/javascript" src="js/classes/repository.js"></script>
   <script defer type="text/javascript" src="js/classes/bypass-date.js"></script>
   <script defer type="text/javascript" src="js/classes/global-summary.js"></script>
+  <script defer type="text/javascript" src="js/classes/story.js"></script>
+  <script defer type="text/javascript" src="js/classes/story-manager.js"></script>
+  <script defer type="text/javascript" src="js/classes/story-map.js"></script>
   <!-- Sinka Scripts -->
   <script defer type="text/javascript" src="js/main-screen.js"></script>
   
@@ -44,6 +56,14 @@
   <!-- Calendar on Map -->
   <div id="bypass-date"></div>
 
+  <!-- GLobal Story -->
+  <div id="global-story" class="global-story restart-animation">
+    <div class="speaker"></div>
+    <div class="title"></div>
+    <div class="description"></div>
+  </div>
+  
+
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha256-aAr2Zpq8MZ+YA/D6JtRD3xtrwpEz2IqOS+pWD/7XKIw=" crossorigin="anonymous" />
@@ -57,6 +77,8 @@
   <!-- Sinka lesser CSS -->
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/global-summary.css">
+  <link rel="stylesheet" href="css/map.css">
+
 </body>
 
 </html>
