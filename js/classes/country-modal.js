@@ -24,6 +24,7 @@ var CountryModal = (function () {
     this.barChart = this.generateBarChart();
     this.$container.find('.js-bar-chart-legend').html(this.barChart.generateLegend());
     this.$seekbar = new SeekBar('#day-player', {min: 0, max: this.dateArray.length - 1})
+    this.$pictogram = new Pictogram('.js-human-chart');
 
     this.bindingEvents();
   }
@@ -78,6 +79,7 @@ var CountryModal = (function () {
     // Caculate icon marker position when modal displayed
     this.$container.on('shown.bs.modal', function () {
       self.$seekbar.renderMarkers();
+      self.$pictogram.render();
     })
     // Change postion in day player
     this.$seekbar.$container.on('change', 'input', function(e) {
@@ -192,6 +194,14 @@ var CountryModal = (function () {
     // Calendar update
     var countDate = DateUtility.getJoiningDates(this.timeSeriesData, countryName, this.dateArray).indexOf(currentDate) + 1;
     this.$container.find('.js-date-count-text').text(countDate);
+
+    // Pictogram update
+    this.$pictogram.activeCount = timeData.active / 1000;
+    this.$pictogram.recoveredCount = timeData.recovered / 1000;
+    this.$pictogram.deathsCount = timeData.deaths / 1000;
+    if (this.$container.hasClass('show')) {
+      this.$pictogram.render();
+    }
   };
 
   /** Generate LineChart with config */
