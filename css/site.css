@@ -1,0 +1,6 @@
+/* Calendar on Map */
+.bypass-date {color: #333; position: fixed; top: 80px; z-index: 400; margin: 10px 0 0 10px; text-align: center; height: 110px; line-height: 1; background: url(../images/icons/calendar.png) center/100% 100% no-repeat;}
+.bypass-date .date-count {margin-top: 43px; width: 100px; user-select: none; }
+.bypass-date .date-count .text { font-size: 16px; font-weight: bold; }
+.bypass-date .date-count .number { font-size: 45px; }
+.bypass-date .current-date { font-size: 14px; font-weight: bold; margin: 1em 0 0px; text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;}
