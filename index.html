@@ -20,6 +20,7 @@
   <!-- Leaflet -->
   <script defer type="text/javascript" src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
   <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+  <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.js"></script>
 
   <!-- Sinka important CSS -->
   <link rel="stylesheet" href="css/site.css">
@@ -41,6 +42,7 @@
   <script defer type="text/javascript" src="js/classes/story.js"></script>
   <script defer type="text/javascript" src="js/classes/story-manager.js"></script>
   <script defer type="text/javascript" src="js/classes/story-map.js"></script>
+  <script defer type="text/javascript" src="js/classes/story-player.js"></script>
   <!-- Sinka Scripts -->
   <script defer type="text/javascript" src="js/main-screen.js"></script>
   
@@ -63,6 +65,10 @@
     <div class="description"></div>
   </div>
   
+  <!-- Story Player -->
+  <div class="player-controller">
+    <div id="story-player" class="player"></div>
+  </div>
 
 
   <!-- Bootstrap -->
@@ -78,7 +84,7 @@
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/global-summary.css">
   <link rel="stylesheet" href="css/map.css">
-
+  <link rel="stylesheet" href="css/story-player.css">
 </body>
 
 </html>
