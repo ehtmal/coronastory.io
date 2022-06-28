@@ -34,6 +34,12 @@ var MainScreen = (function () {
     $('#search-box').on('keyup', Utility.debounce(function () {
       $rankingBar.search($(this).val());
     }, 200));
+
+    // Global DetailsPopup events
+    $(document).on('click', '.global-summary-item', function () {
+      $countryModal.show('GLOBAL', 'glb', $storyPlayer.getTime());
+    });
+
   }
 
   /** Repository fetch data done handler */
