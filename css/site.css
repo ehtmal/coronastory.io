@@ -4,3 +4,38 @@
 .bypass-date .date-count .text { font-size: 16px; font-weight: bold; }
 .bypass-date .date-count .number { font-size: 45px; }
 .bypass-date .current-date { font-size: 14px; font-weight: bold; margin: 1em 0 0px; text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;}
+
+/* SideBar */
+#open-side-bar { position: fixed; z-index: 500; background-color: transparent; border: none; padding: 10px; top: 15px; left: 15px; border-radius: 10px; cursor: pointer;}
+#open-side-bar:hover {background-color: #fffce5;}
+#open-side-bar img{width: 30px;}
+.screen-overlay { position: fixed;  top: 0; left: 0;  bottom: 0; right: 0; z-index: -1; opacity: 0; background-color: #000; height: 100vh; width: 100vw;}
+.screen-overlay.visible { opacity: 0.4; z-index: 1100; }
+
+/* Embed Container */
+.embed-container { position: absolute; background: url(../images/design-resource/Picture9.png) center no-repeat; background-size: 103% 106%; max-width: 100%; padding: 20px; z-index: -1; opacity: 0; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.embed-container.visible { opacity: 1; z-index: 1101; }
+.embed-container .embed-size { display: flex; align-items: center; margin-bottom: 10px; }
+.embed-container .embed-input { width: 60px; margin: 0 10px; }
+.embed-container .embed-link { padding: 0; width: 600px; border-width: 0 0 1px 0; border-color: #000; background: transparent; }
+.embed-container .embed-link:focus { outline: none; }
+
+/* Donate button */ 
+.btn-donate {position: absolute; bottom: 64px; left: 30px;width: 192px; display: flex; align-items: center; padding: 4px 8px; border-radius: 6px; background: #D66C40; color: #000 !important; font-size: 14px; font-weight: bold; text-decoration: none !important; box-shadow: 0px 4px 0px #ffd4a2; }
+.btn-donate:active { box-shadow: 0 0 0 #ffd4a2; bottom: 60px; }
+.btn-donate img { height: 30px; margin-right: 7px; }
+
+/* Share modal */
+#share-modal { z-index: 1300; }
+#share-modal .modal-dialog{margin-top: 18%;}
+#share-modal .modal-content{background: url(../images/design-resource/Picture9.png) no-repeat; background-size: 100% 100% ; height: 250px; border: none ;}
+#share-modal .modal-content .modal-body{display: flex; flex-direction: column; justify-content: space-evenly;}
+#share-modal .icon{width: 64px; height: 64px;}
+#share-modal .icon:hover{cursor: pointer;}
+#share-modal .facebook{background: url(../images/share/facebook.svg) no-repeat center; background-size: 100% 100%;}
+#share-modal .twitter{background: url(../images/share/twitter.svg) no-repeat center;background-size: 100% 100%;}
+#share-modal .email{background: url(../images/share/email.svg) no-repeat center;background-size: 100% 100%;}
+#share-modal .link{background: url(../images/share/link.svg) no-repeat center;background-size: 100% 100%;}
+#share-modal .share-icon{display: inline-grid; text-align: center;}
+#share-modal .share-icon .title{font-weight: 600;}
+#share-modal .copy-link-input{display: inline-block; width: 580px; border: 2px solid #000;}

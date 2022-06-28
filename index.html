@@ -11,6 +11,7 @@
   <!-- Bootstrap -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js" integrity="sha256-/ijcOLwFf26xEYAjW75FizKVo5tnTYiQddPZoLUHHZ8=" crossorigin="anonymous"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha256-OFRAJNoaD8L3Br5lglV7VyLRf0itmoBzWUoM+Sji4/8=" crossorigin="anonymous"></script>
+  <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
   <!-- DayJS -->
   <script defer src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
   <!-- ChartJS -->
@@ -33,16 +34,22 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.1.3/browser/pixi.js" integrity="sha512-8xvARw57q2JyibUPprcXg7j2wFKYFi4AQPSau9KjL4gbExjuNz61hp32AzVoKYGvpnP2V0KTPHzpabl7KBf1MQ==" crossorigin="anonymous"></script>
   <script src="vendors/pixi-viewport-4.33.0/viewport.min.js"></script>
   <script src="vendors/pixi-scrollbox-2.3.0/scrollbox.js"></script>
+  <!-- Jquery i18n -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.7/jquery.i18n.min.js" integrity="sha256-Xe5TCNN0b3K98e99/oWJr0FOiSTILqWWWEaDCY48V5E=" crossorigin="anonymous"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.7/jquery.i18n.messagestore.min.js" integrity="sha256-dxDziD29LGTvKo6LXzZmm8o8W87YCu4BOh+tsrDJd4k=" crossorigin="anonymous"></script>
 
   <!-- Sinka important CSS -->
+  <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/site.css">
-  
+
   <!-- Sinka Resources -->
   <script defer type="text/javascript" src="js/resources/station-data.js"></script>
   <script defer type="text/javascript" src="js/resources/rules-default.js"></script>
   <script defer type="text/javascript" src="js/resources/stories-default.js"></script>
   <script defer type="text/javascript" src="js/resources/prefix-setting.js"></script>
   <script defer type="text/javascript" src="js/common/constant.js"></script>
+  <script defer src="js/languages/en.js"></script>
+  <script defer src="js/languages/vi.js"></script>
   <!-- Sinka Classes -->
   <script defer type="text/javascript" src="js/utilities/utility.js"></script>
   <script defer type="text/javascript" src="js/utilities/number-utility.js"></script>
@@ -66,6 +73,100 @@
 </head>
 
 <body class="d-flex">
+  <!-- Left Menu -->
+  <div id="left-side-bar" class="left-side-bar">
+    <div class="top-region">
+      <div class="app-name" data-i18n="corona-story">Corona Story</div>
+      <div class="app-powered">powered by <a href="https://sinka.vn" target="_blank">Sinka.vn</a></div>
+      <div class="menus">
+        <div class="menu" id="story">
+          <i class="fas fa-book"></i>
+          <span data-i18n="story">Story</span>
+        </div>
+        <div class="menu" id="embed">
+          <i class="fa fa-code"></i>
+          <span data-i18n="embed">Embed</span>
+        </div>
+        <div class="menu" id="about-us">
+          <i class="fas fa-users"></i>
+          <span data-i18n="about-us">About Us</span>
+        </div>
+        <div class="menu" id="install-pwa-app">
+          <i class="fas fa-plus-circle"></i>
+          <span data-i18n="install-the-app">Install the app</span>
+        </div>
+      </div>
+      <div class="region-header" data-i18n="preferences">Preferences</div>
+      <div class="d-flex">
+        <label for="language-picker" data-i18n="language">Language</label>
+        <select id="language-picker" class="selectpicker">
+          <option value="en" data-content="<span class='language-item en'>English</span>"></option>
+          <option value="vi" data-content="<span class='language-item vi'>Tiếng Việt</span>"></option>
+        </select>
+      </div>
+    </div>
+    <div class="bottom-region">
+      <div class="donate-and-share">
+        <button id="donate-button" class="donate-button"><img src="images/share/coffee.svg" /><span data-i18n="buy-us-a-coffee">Buy us a coffee</span></button>
+        <button id="share-button" class="share-button"><img src="images/share/like.svg" /></button>
+      </div>
+      <div class="copyright">
+        <span>© 2020 SinkaVN, Inc. All Rights Reserved.</span><br><a target="_blank" href="#">Terms</a> | <a target="_blank" href="#">Privacy</a> | <a target="_blank" href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+  <button id="open-side-bar" class="no-outline"><img src="images/menu.svg" alt="Menu"></button>
+  <div class="screen-overlay"></div>
+
+  <!-- Embed -->
+  <div class="embed-container">
+    <h3 data-i18n="embed-page">Embed Page</h3>
+    <hr>
+    <div class="embed-size">
+      <p class="mb-0" data-i18n="page-size">Page Size</p>
+      <label for="embed-input-width" class="sr-only">Embed Width</label>
+      <input id="embed-input-width" type="number" class="embed-input width" value="900">
+      <span>&times;</span>
+      <label for="embed-input-height" class="sr-only">Embed Width</label>
+      <input id="embed-input-height" type="number" class="embed-input height" value="600">
+    </div>
+    <label for="embed-input-link" class="sr-only"></label>
+    <input id="embed-input-link" type="text" class="embed-link" spellcheck="false" value='<iframe src="https://coronastory.io/" width="900" height="600" frameborder="0" style="border:0;" tabindex="0"></iframe>'>
+    <div style="font-size: 14px;" class="embed-copied"></div>
+  </div>
+
+  <!--Modal share-->
+  <div id="share-modal" class="modal fade country-modal" tabindex="-1" role="dialog" style="display: none;">
+    <div class="modal-dialog" style="max-width: 700px;" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="d-flex justify-content-around w-100">
+            <div class="share-icon">
+              <a class="icon facebook" title="Facebook" target="_blank" rel="noopener" href="https://www.facebook.com/sharer.php?u=https://coronastory.io/"></a>
+              <div class="title">Facebook</div>
+            </div>
+            <div class="share-icon">
+              <a class="icon twitter" title="Twitter" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://coronastory.io/"></a>
+              <div class="title">Twitter</div>
+            </div>
+            <div class="share-icon">
+              <a class="icon email" title="Email" href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://coronastory.io/"></a>
+              <div class="title">Email</div>
+            </div>
+            <div class="share-icon">
+              <a id="copy-link" class="icon link" title="Copy URL" href="https://coronastory.io/"></a>
+              <div class="title">Copy URL</div>
+            </div>
+          </div>
+          <div class="text-center">
+            <input id="copy-link-input" class="copy-link-input form-control" type="text" readonly="readonly" value="https://coronastory.io/" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
   <!-- Global Summary -->
   <div id="global-summary"></div>
 
@@ -220,6 +321,7 @@
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha256-aAr2Zpq8MZ+YA/D6JtRD3xtrwpEz2IqOS+pWD/7XKIw=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
   <!-- Leaflet -->

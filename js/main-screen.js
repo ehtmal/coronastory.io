@@ -30,6 +30,12 @@ var MainScreen = (function () {
   }
 
   MainScreen.prototype.bindingEvents = function () {
+    // On Update language update all Stories language
+    $(document).on('change', '.selectpicker', function (e) {
+      $globalStoryManager.updateLanguage(e.target.value);
+      $storyPlayer.updateStories($globalStoryManager.getAllStories());
+    });
+
     // Search RankingBar
     $('#search-box').on('keyup', Utility.debounce(function () {
       $rankingBar.search($(this).val());
