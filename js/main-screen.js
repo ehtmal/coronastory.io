@@ -90,7 +90,8 @@ var MainScreen = (function () {
   /** Repository fetch data done handler */
   MainScreen.assignDataCallback = function (data) {
     // Init [StoryManager]
-    $globalStoryManager = new StoryManager("global", "default", "default", "en", data.timeSeriesData);
+    var language = $('#language-picker').val();
+    $globalStoryManager = new StoryManager("global", "default", "default", language, data.timeSeriesData);
     // Init [GlobalSummary]
     $globalSummary = new GlobalSummary("#global-summary", data.globalData, data.dateArray);
     $globalSummary.update(0);
@@ -130,8 +131,12 @@ var MainScreen = (function () {
     $globalSummary.update(timeIndex);
     // Update [BypassDate]
     $bypassDate.updateTimeIndex(timeIndex);
-    // Update RankingBar
-    $rankingBar.update(timeIndex);
+    // Update [RankingBar]
+    if ($(window).width() > MOBILE_RESOLUTION) {
+      $rankingBar.update(timeIndex);
+    } else {
+      $rankingBarMobile.update(timeIndex);
+    }
     // Update Map Locations
     $storyMap.updateLocationsByTime(timeIndex);
   }

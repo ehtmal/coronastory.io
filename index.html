@@ -42,6 +42,7 @@
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/site.css">
   <link rel="stylesheet" href="css/screen-main.css">
+  <link rel="stylesheet" href="css/mobile.css">
 
   <!-- Sinka Resources -->
   <script defer type="text/javascript" src="js/resources/station-data.js"></script>
@@ -202,7 +203,7 @@
   </div>
 
 
-  
+
   <!-- Global Summary -->
   <div id="global-summary"></div>
 
@@ -228,6 +229,14 @@
   <div id="pc-ranking">
     <input id="search-box" type="search" class="search-box" name="search-box" data-i18n="[placeholder]search" placeholder="Search..." />
     <div id="ranking-container" class="ranking-container"></div>
+  </div>
+  <!-- Mobile RankingBar -->
+  <div id="mobile-ranking">
+    <div id="open-glb-popup-btn" class="global-summary-item"></div>
+    <label for="search-box-mobile" class="sr-only">Search</label>
+    <input id="search-box-mobile" class="no-outline" type="search" name="search-box" autocomplete="off" placeholder="Search..." />
+    <div id="mobile-ranking-container" class="ranking-container"></div>
+    <div class="btn-close no-outline"></div>
   </div>
 
   <!-- CountryModal -->
