@@ -1,0 +1,75 @@
+/* Main Maps */
+#global-map { flex-grow: 1; height: 100%;}
+
+/* Global Story */
+.global-story {max-width: 569px; position: absolute; top: 95px; left: 120px; min-height: 95px; background-color: #fff7e5; border-radius: 10px; z-index: 401; padding: 15px 10px 10px; border: 3px solid #000; pointer-events: none; opacity: 0; }
+.global-story .title { font-size: 20px; font-weight: bold; }
+.global-story .speaker { position: absolute; top: -27px; width: 44px; height: 44px; background: url(../images/icons/speaker.png) center/cover no-repeat;}
+.global-story img { height: 14px; width: auto; }
+
+/* Auto Story */
+.story-content { display: flex; align-items: center; font-size: 12px; line-height: 1; }
+.story-content.confirmed { color: #ff406d; }
+.story-content.active { color: #2670ff; }
+.story-content.recovered { color: #61cf82; }
+.story-content.deaths { color: #8944e7; }
+.story-content .icon { height: 20px; width: 20px; margin-right: 2px; object-fit: cover;}
+.story-content .text .title,
+.story-content .text .description {text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;}
+.story-content .text .title { white-space: nowrap; font-weight: bold; }
+.story-content .text .description { white-space: nowrap; color: #666; font-weight: normal; }
+.story-content .text img { width: auto; height: 10px; }
+
+/* Local Story */
+.local-story { padding: 5px; border-radius: 5px; border: 1px solid #000; background-color: #fff7e5; opacity: 0.9;}
+.local-story .title {font-weight: bold; font-size: 16px;}
+.local-story img { height: 14px; width: auto; }
+
+/* Leaflet Popup */
+.mypopup { font-family: myFont; }
+.leaflet-popup-tip-container { display: none;}
+.leaflet-popup-content { margin: 0; max-width: 200px !important; }
+.leaflet-popup-content-wrapper { padding: 0; box-shadow: unset !important; background-color: transparent;}
+
+/* Leaflet Tooltip */
+.mytooltip { border-radius: 0; border: none; padding: 0; border: 2px solid #000; border-radius: 7px; overflow: hidden; box-shadow: none; }
+.mytooltip .tooltip-container {color: #36363c; font-family: myFont;}
+.mytooltip .tooltip-container .flag { width: 186px; height: 120px; background: var(--url) center/cover no-repeat;}
+.mytooltip .tooltip-container .country-name { font-size: 16px; font-weight: 600; text-align: center; line-height: 20px; margin-top: 10px; white-space: normal; }
+.mytooltip .info-container { padding: 7px;}
+.mytooltip .info-item { display: flex; align-items: center; justify-content: space-between; line-height: 1; margin-top: 7px;}
+.mytooltip .info-item .left { display: flex;}
+.mytooltip .info-item .left .icon { width: 24px; height: 24px; margin-right: 7px;}
+.mytooltip .info-item.confirmed .left .icon { background: url(../images/icons/confirmed.svg) center/contain no-repeat;}
+.mytooltip .info-item.active .left .icon { background: url(../images/icons/active.svg) center/contain no-repeat;}
+.mytooltip .info-item.recovered .left .icon { background: url(../images/icons/recovered.svg) center/contain no-repeat;}
+.mytooltip .info-item.deaths .left .icon { background: url(../images/icons/deaths.svg) center/contain no-repeat;}
+.mytooltip .info-item.confirmed { color: rgb(255, 65, 108);}
+.mytooltip .info-item.active { color: rgb(40, 110, 255);}
+.mytooltip .info-item.recovered { color: rgb(97, 206, 129);}
+.mytooltip .info-item.deaths { color: rgb(134, 67, 230);}
+.mytooltip .info-item .left .content { display: flex; flex-direction: column; justify-content: center;}
+.mytooltip .info-item .number,
+.mytooltip .info-item .right { font-size: 14px; font-weight: 600;}
+.mytooltip .info-item .text { color: #aab7c2; }
+
+@keyframes display-global-story {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes display-local-story {
+  0% { margin-bottom: 0px; opacity: 0; visibility: visible; }
+  10% { margin-bottom: 10px; opacity: 1; }
+  90% { margin-bottom: 40px; opacity: 1; }
+  100% { margin-bottom: 50px; opacity: 0; }
+}
+
+@keyframes display-auto-story {
+  0% { margin-bottom: 0px; opacity: 0; visibility: visible; }
+  20% { margin-bottom: 25px; opacity: 1; }
+  80% { margin-bottom: 65px; opacity: 1; }
+  100% { margin-bottom: 75px; opacity: 0; }
+}

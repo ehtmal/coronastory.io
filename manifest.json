@@ -1,0 +1,36 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "Corona Story",
+    "short_name": "Corona Story",
+    "scope": "/",
+    "display": "Standalone",
+    "start_url": "https://coronastory.io/",
+    "background_color": "#fff7e5",
+    "theme_color": "#fff7e5",
+    "description": "In a digital world and lots of free time at home, fake news is like the poison to the mind. It make we see the world with a different filter, and most of the time the filter is fear. We can't ignore news because that make us ignore the problem, ignore the other who really need help. We decide to bring to you the story about Corona Virus with a different perspective.",
+    "orientation": "portrait-primary",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "https://coronastory.io/images/sinka-logo-512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        }
+    ],
+    "url": "https://coronastory.io/",
+    "screenshots": [
+        {
+            "src": "images/pc-screenshot.png",
+            "sizes": "1280x800",
+            "type": "image/png"
+        },
+        {
+            "src": "images/mobile-screenshot.png",
+            "sizes": "750x1334",
+            "type": "image/png"
+        }
+    ]
+}

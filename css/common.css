@@ -1,0 +1,24 @@
+@font-face {
+  font-family: myFont;
+  src: url('../fonts/MyFont.ttf');
+}
+
+html, body { font-family: myFont; height: 100%; }
+.tooltip { font-family: myFont; }
+canvas { user-select: none;}
+
+.inline { display: inline; }
+
+.f-20 {font-size: 20px;}
+.f-30 {font-size: 30px;}
+.flex-grow-1 {flex-grow: 1;}
+.visibility-hidden { visibility: hidden; }
+.no-outline { outline: none !important; }
+
+.text-confirmed { color: #ff416c; }
+.text-active { color: #286eff; }
+.text-recovered { color: #61ce81; }
+.text-deaths { color: #8643e6; }
+
+button.close:focus { outline: none;}
+.bootstrap-select .dropdown-toggle:focus { outline: none !important;}

@@ -1,0 +1,90 @@
+/* Hidden mobile elements */
+#mobile-ranking { display: none; position: absolute; border: 2px solid #000; top: 8px; left: 8px; right: 8px; padding-bottom: 3px; border-radius: 8px; background: rgb(255, 247, 229); z-index: 499; }
+#mobile-ranking #mobile-ranking-container { display: none; margin-bottom: 60px; }
+#mobile-ranking .btn-close {
+  display: none;
+  position: fixed;
+  bottom: 68px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  cursor: pointer;
+  left: 50%;
+  margin-left: -25px;
+  background: #fff url(../images/close.png) center/cover no-repeat;
+}
+#mobile-ranking.show { height: calc(100% - 65px); overflow-y: auto; }
+#mobile-ranking.show #mobile-ranking-container { display: block; position: relative; }
+#mobile-ranking.show .btn-close { display: block; }
+#search-box-mobile { height: 50px; border-radius: 10px; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25); border: 2px solid #333; margin: 3px 0 0 70px; width: calc(100% - 78px); color: #333; border-radius: 30px; background-color: #faf7a5; padding-left: 15px; }
+.country-modal .btn-close {
+  position: fixed;
+  left: 50%;
+  bottom: 40px;
+  width: 50px;
+  height: 50px;
+  margin-left: -25px;
+  border-radius: 50%;
+  padding: 0;
+  border: none;
+  background: #fff url(../images/close.png) center/cover no-repeat;
+}
+.country-modal .break-line { flex-basis: 100%; height: 0; }
+
+/** Mobile resolution CSS */
+@media screen and (max-width: 991px) {
+  #pc-ranking,
+  #global-summary,
+  .background .about-us,
+  .background .global-heart,
+  .background .global-hug { display: none !important; }
+
+  #global-map .timecontrol-slider .slider { margin: 0px 0px 0px 0px; width: calc(100vw - 335px) !important; }
+  #global-map .leaflet-bar-timecontrol .leaflet-control-timecontrol { margin: 7px 0px 0px 295px; }
+
+  #mobile-ranking { display: initial; }
+  #mobile-ranking .ranking-container { height: auto; overflow: auto; }
+
+  .country-modal .modal-dialog { margin: 0.5rem;}
+  .country-modal .modal-body { max-height: calc(100vh - 18px) !important; }
+  .country-modal .container { padding-right: 0px !important; padding-left: 0px !important; }
+  .country-modal .datetime { margin: 0px; }
+  .country-modal .simplebar-content { padding-top: 0px !important; }
+  .country-modal .statics,
+  .background .page-content .page { margin-top: 40px; }
+
+  .custom-legend li { margin-right: 5px !important; }
+  .embed-container .embed-link { width: 300px !important; }
+  .about-hot-features { margin-right: 0px !important; }
+  #open-glb-popup-btn { background-image: url(../images/flags/glb.svg);background-size: cover;position: absolute;right: 18px;top: 10px;height: 37px;width: 37px;cursor: pointer; }
+  .bypass-date {margin-left: 4px;}
+  #story-player {margin-left: -6px;}
+  .country-modal .modal-dialog {height: calc(100% - 25px) !important;}
+  .country-modal .btn-close {bottom: 30px;}
+}
+
+@media screen and (max-width: 575px) {
+  .player-control-button.move-to-first-button,
+  .player-control-button.previous-button,
+  .player-control-button.next-button { display: none !important; }
+  #global-map .timecontrol-slider .slider { width: calc(100vw - 190px) !important; }
+  #global-map .leaflet-bar-timecontrol .leaflet-control-timecontrol { margin: 7px 0px 0px 150px; }
+  .global-story {left: 105px !important;width: calc(100% - 113px) !important;}
+  .global-story .title {font-size: 15px !important;}
+  .global-story .speaker {top: -22px !important;width: 40px !important;height: 40px !important;}
+  .help-popup .involve-content {width: 375px !important;left: 53% !important;}
+  .help-popup .caption {font-size: 22px !important;}
+  .help-popup .caption-description {font-size: 12px !important;}
+  .help-popup .suggest-list .suggest-item {width: 168px !important;height: 168px !important;}
+  .help-popup .suggest-list .suggest-item .img {width: 70px !important;}
+  .config-manager {width: 335px !important;left: -335px;}
+  .tab-content .tab-title {min-height: 78px !important;}
+  .config-item .name {font-size: 12px;}
+  .config-item .description {font-size: 10px !important;}
+  .rule-item .story-metadata {font-size: 10px !important;}
+  .story-container .local-story .story-metadata {font-size: 10px !important;}
+  .story-container .local-story .story-metadata .story-date {min-width: 65px !important;}
+  .story-container .local-story .story-metadata .story-duration {min-width: 65px !important;}
+  #open-side-bar { top: 13px; left: 13px; }
+  .mobile-wrap { flex-wrap: wrap; }
+}

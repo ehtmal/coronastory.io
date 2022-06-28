@@ -1,0 +1,25 @@
+
+#pc-ranking { width: 300px; background:#fff7e5 url(../images/design-resource/BG.sibar2.jpg) no-repeat center; background-size: cover;}
+
+.search-box { height: 50px; width: calc(100% - 40px); padding: 0px 20px 0 15px; border: 2px solid #333; margin: 10px 20px 20px;
+              color: #333; border-radius: 30px; outline: none !important; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25); background: #faf7a5 url(../images/icons/search.png) no-repeat right top; background-position: 220px 14px;}
+
+.ranking-container { height: calc(100vh - 80px); overflow: auto;}
+
+.country-item { height: 60px; border: 1px solid transparent; padding: 0 20px; align-items: center; cursor: pointer; width: 100%;}
+.country-item-detail { display: flex; margin: 10px 0 5px 0;}
+.country-item:hover { background-color: rgba(198, 217, 255, 0.7); border-color: #7791fa transparent;}
+.country-item .index { min-width: 20px; height: 24px; background-color: #fff; color: #86868a; text-align: center; line-height: 24px; font-size: 10px; font-weight: bold;}
+.country-item .flag { min-width: 32px; height: 24px; background: var(--url) center/cover no-repeat;}
+.country-item .content { margin: 0 10px; line-height: 1; flex-grow: 1; min-width: 0;}
+.country-item .content .country-name { font-weight: 600; white-space: nowrap; overflow: hidden;text-overflow: ellipsis;}
+.country-item .content .item-name { font-size: 12px; color: #aab7c2;}
+.country-item .amount { font-size: 16px; font-weight: 600; color: #ff416c;}
+.country-item .progress { border-radius: 20px !important; height: 10px !important; background-color: grey !important; transition: all 1000ms ease 0s;}
+.country-item .progress .progress-bar { transition: width 1000ms ease 0s;}
+.country-item .progress .widthActive { background-color: #286eff;}
+.country-item .progress .widthRecoved { background-color: #61ce81;}
+.country-item .progress .widthDeath { background-color: #8643e6;}
+.country-item .progress .widthActive:hover{ box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2) inset;}
+.country-item .progress .widthRecoved:hover{ box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2) inset;}
+.country-item .progress .widthDeath:hover{ box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2) inset;}

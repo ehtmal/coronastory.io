@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Corona Story Studio - Sinka.vn</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="In a digital world and lots of free time at home, fake news is like the poison to the mind. It make we see the world with a different filter, and most of the time the filter is fear. We can't ignore news because that make us ignore the problem, ignore the other who really need help. We decide to bring to you the story about Corona Virus with a different perspective.">
+  <meta name="theme-color" content="#fff7e5"/>
+  <!-- SNS meta -->
+  <meta property="og:title" content="Corona Story">
+  <meta property="og:description" content="In a digital world and lots of free time at home, fake news is like the poison to the mind. It make we see the world with a different filter, and most of the time the filter is fear. We can't ignore news because that make us ignore the problem, ignore the other who really need help. We decide to bring to you the story about Corona Virus with a different perspective.">
+  <meta property="og:image" content="https://coronastory.io/images/banner.png">
+  <meta property="og:url" content="https://coronastory.io/">
+  <meta name="twitter:title" content="Corona Story ">
+  <meta name="twitter:description" content=" In a digital world and lots of free time at home, fake news is like the poison to the mind. It make we see the world with a different filter, and most of the time the filter is fear. We can't ignore news because that make us ignore the problem, ignore the other who really need help. We decide to bring to you the story about Corona Virus with a different perspective.">
+  <meta name="twitter:image" content=" https://coronastory.io/images/banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="apple-touch-icon" href="/images/sinka-logo-192.png">
+  <link rel="icon" href="images/favicon.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- Sinka important CSS -->
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/screen-story-studio.css">
+  <link rel="stylesheet" href="css/mobile.css">
+
+  <!-- Jquery -->
+  <script defer src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js" integrity="sha256-/ijcOLwFf26xEYAjW75FizKVo5tnTYiQddPZoLUHHZ8=" crossorigin="anonymous"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha256-OFRAJNoaD8L3Br5lglV7VyLRf0itmoBzWUoM+Sji4/8=" crossorigin="anonymous"></script>
+  <!-- Bootstrap Select -->
+  <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+  
+  <!-- SimpleBar -->
+  <script defer type="text/javascript" src="https://unpkg.com/simplebar@5.1.0/dist/simplebar.min.js"></script>
+  
+  <!-- ChartJS -->
+  <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+  <!-- Fengyuanchen Datepicker -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.9/datepicker.min.js" integrity="sha256-ZfF8n2U/HAoaw9WFo8VCUbLo58Q/goLRQ1TFrf4DA94=" crossorigin="anonymous"></script>
+
+  <!-- Ion RangeSlider -->
+  <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+
+  <!-- Jquery i18n -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.7/jquery.i18n.min.js" integrity="sha256-Xe5TCNN0b3K98e99/oWJr0FOiSTILqWWWEaDCY48V5E=" crossorigin="anonymous"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.7/jquery.i18n.messagestore.min.js" integrity="sha256-dxDziD29LGTvKo6LXzZmm8o8W87YCu4BOh+tsrDJd4k=" crossorigin="anonymous"></script>
+
+  <!-- Polyfill -->
+  <script defer type="text/javascript" src="https://cdn.polyfill.io/v3/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find"></script>
+  
+  <!-- Shufflejs -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Shuffle/5.2.3/shuffle.min.js" integrity="sha512-VHIYn9ssmuPBliadBEgGCTRtCO4agkhQCxiPaTBKaAq0cm2KKpX+PE2klG1VfOHKKcN5eZcev0M3s5V2xXxVew==" crossorigin="anonymous"></script>
+
+  <!-- DayJS -->
+  <script defer src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+
+  <!-- CountUp-->
+  <script defer type="text/javascript" src="vendors/countUp.min.js"></script>
+
+  <!-- Leaflet -->
+  <script defer type="text/javascript" src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+  <!-- Leaflet TimeDimension -->
+  <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+  <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.js"></script>
+  <!-- Leaflet Country Select -->
+  <script defer type="text/javascript" src="vendors/Leaflet.CountrySelect.js"></script>
+
+  <!-- Icheck -->
+  <script defer type="text/javascript" src="vendors/icheck/icheck.js"></script>
+
+  <!-- SweetAlert 2 -->
+  <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@9.14.0/dist/sweetalert2.all.min.js"></script>
+
+  <!-- Sortable -->
+  <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+  <!-- Ion RangeSlider -->
+  <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+
+  <!-- PixiJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.1.3/browser/pixi.js" integrity="sha512-8xvARw57q2JyibUPprcXg7j2wFKYFi4AQPSau9KjL4gbExjuNz61hp32AzVoKYGvpnP2V0KTPHzpabl7KBf1MQ==" crossorigin="anonymous"></script>
+  <!-- <script src="vendors/pixi-mousewheel.js"></script> -->
+  <script src="vendors/pixi-viewport-4.33.0/viewport.min.js"></script>
+  <script src="vendors/pixi-scrollbox-2.3.0/scrollbox.js"></script>
+
+  <!-- Sinka Common -->
+  <script defer type="text/javascript" src="js/utilities/utility.js"></script>
+  <script defer type="text/javascript" src="js/utilities/date-utility.js"></script>
+  <script defer type="text/javascript" src="js/utilities/number-utility.js"></script>
+  <script defer type="text/javascript" src="js/utilities/string-utility.js"></script>
+  <script defer type="text/javascript" src="js/common/constant.js"></script>
+  <!-- Sinka Language -->
+  <script defer src="js/languages/en.js"></script>
+  <script defer src="js/languages/vi.js"></script>
+  <!-- Sinka Resources -->
+  <script defer type="text/javascript" src="js/resources/station-data.js"></script>
+  <script defer type="text/javascript" src="js/resources/rules-default.js"></script>
+  <script defer type="text/javascript" src="js/resources/rules-real-all.js"></script>
+  <script defer type="text/javascript" src="js/resources/rules-real-confirmed.js"></script>
+  <script defer type="text/javascript" src="js/resources/rules-real-active.js"></script>
+  <script defer type="text/javascript" src="js/resources/rules-real-recovered.js"></script>
+  <script defer type="text/javascript" src="js/resources/rules-real-deaths.js"></script>
+  <script defer type="text/javascript" src="js/resources/stories-default.js"></script>
+  <script defer type="text/javascript" src="js/resources/prefix-setting.js"></script>
+  <!-- Sinka Classes -->
+  <script defer type="text/javascript" src="js/classes/bypass-date.js"></script>
+  <script defer type="text/javascript" src="js/classes/pictogram.js"></script>
+  <script defer type="text/javascript" src="js/classes/country-modal.js"></script>
+  <script defer type="text/javascript" src="js/classes/global-summary.js"></script>
+  <script defer type="text/javascript" src="js/classes/ranking-bar.js"></script>
+  <script defer type="text/javascript" src="js/classes/repository.js"></script>
+  <script defer type="text/javascript" src="js/classes/seekbar.js"></script>
+  <script defer type="text/javascript" src="js/classes/story.js"></script>
+  <script defer type="text/javascript" src="js/classes/story-manager.js"></script>
+  <script defer type="text/javascript" src="js/classes/story-map.js"></script>
+  <script defer type="text/javascript" src="js/classes/story-player.js"></script>
+  <script defer type="text/javascript" src="js/classes/storystudio/manager-auto-story.js"></script>
+  <script defer type="text/javascript" src="js/classes/storystudio/manager-manual-story.js"></script>
+  <!-- Sinka Scripts -->
+  <script defer type="text/javascript" src="js/story-studio-screen.js"></script>
+  <script defer type="text/javascript" src="js/site.js"></script>
+  
+  <!-- PWA -->
+  <link rel='manifest' href='/manifest.json'>
+  <script defer type="text/javascript" src="js/pwa.js"></script>
+  <script type="module">
+    import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+    const el = document.createElement('pwa-update');
+    document.body.appendChild(el);
+  </script>    
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156180711-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-156180711-1');
+  </script>
+</head>
+
+<body class="d-flex">
+
+  <!-- Left Menu -->
+  <div id="left-side-bar" class="left-side-bar">
+    <div class="top-region">
+      <div class="app-name" data-i18n="corona-story">Corona Story</div>
+      <div class="app-powered">powered by <a href="https://sinka.vn" target="_blank">Sinka.vn</a></div>
+      <div class="menus">
+        <div class="menu" id="story">
+          <i class="fas fa-book"></i>
+          <span data-i18n="story">Story</span>
+        </div>
+        <div class="menu" id="embed">
+          <i class="fa fa-code"></i>
+          <span data-i18n="embed">Embed</span>
+        </div>
+        <div class="menu" id="about-us">
+          <i class="fas fa-users"></i>
+          <span data-i18n="about-us">About Us</span>
+        </div>
+        <div class="menu" id="install-pwa-app">
+          <i class="fas fa-plus-circle"></i>
+          <span data-i18n="install-the-app">Install the app</span>
+        </div>
+      </div>
+      <div class="region-header" data-i18n="preferences">Preferences</div>
+      <div class="d-flex">
+        <label for="language-picker" data-i18n="language">Language</label>
+        <select id="language-picker" class="selectpicker">
+          <option value="en" data-content="<span class='language-item en'>English</span>"></option>
+          <option value="vi" data-content="<span class='language-item vi'>Tiếng Việt</span>"></option>
+        </select>
+      </div>
+    </div>
+    <div class="bottom-region">
+      <div class="donate-and-share">
+        <button id="donate-button" class="donate-button"><img src="images/share/coffee.svg" /><span data-i18n="buy-us-a-coffee">Buy us a coffee</span></button>
+        <button id="share-button" class="share-button"><img src="images/share/like.svg" /></button>
+      </div>
+      <div class="copyright">
+        <span>© 2020 SinkaVN, Inc. All Rights Reserved.</span><br><a target="_blank" href="#">Terms</a> | <a target="_blank" href="#">Privacy</a> | <a target="_blank" href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+  <div class="screen-overlay"></div>
+  <!-- Left Menu Button -->
+  <button id="open-side-bar"><img src="images/menu.svg"></button>
+
+  <!-- Story Manager -->
+  <div class="config-manager">
+    <div class="additional-div"></div>
+    <div id="open-config-manager" class="config-manager-arrow bounce"><i class="fa fa-chevron-right"></i></div>
+    <!-- Story Manager Nav -->
+    <div class="menu-container">
+      <ul class="nav nav-pills">
+        <li class="active" title="Prefix Stories" data-toggle="tooltip" data-trigger="hover" data-placement="right">
+          <a id="preconfig-tab" data-toggle="tab" href="#preconfig-story">
+            <img src="./images/story-studio/fairy-tale.svg" />
+          </a>
+        </li>
+        <li title="Auto Story" data-toggle="tooltip" data-trigger="hover" data-placement="right">
+          <a id="auto-story-tab" data-toggle="tab" href="#auto-story-manager">
+            <img src="./images/story-studio/auto-story.svg" />
+          </a>
+        </li>
+        <li title="Manual Story" data-toggle="tooltip" data-trigger="hover" data-placement="right">
+          <a id="manual-story-tab" data-toggle="tab" href="#manual-story">
+            <img src="./images/story-studio/manual-story.svg" />
+          </a>
+        </li>
+        <li title="Country mode" data-toggle="tooltip" data-trigger="hover" data-placement="right">
+          <a id="country-mode-tab" data-toggle="tab" href="#country-mode">
+            <img src="./images/story-studio/search-map.png"/>
+          </a>
+        </li>
+        <li title="Map Settings" data-toggle="tooltip" data-trigger="hover" data-placement="right">
+          <a id="setting-tab" data-toggle="tab" href="#setting">
+            <img src="./images/story-studio/treasure-map.svg" />
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-content">
+      <!-- Preconfig Story Panel -->
+      <div id="preconfig-story" class="tab-pane fade show active" role="tabpanel">
+        <div class="d-flex flex-column" style="height: calc(100vh - 4px);">
+          <div class="tab-title">
+            <h4>Prefix Setting</h4>
+          </div>
+          <div class="tab-details" style="padding: 2px 15px;">
+            <div class="row no-gutters">
+              <div class="col-6">
+                <div class="config-item setting" data-setting="SETTING_DEFAULT">
+                  <img src="images/story-studio/fairy-tale.svg" alt="icon">
+                  <div class="name">Default story</div>
+                  <div class="description">Our default Story for you</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="config-item setting" data-setting="SETTING_REAL_VALUE">
+                  <img src="images/story-studio/book-magnifying-glass.svg" alt="icon">
+                  <div class="name">Real-value story</div>
+                  <div class="description">Show real-value each cases per day</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="config-item setting" data-setting="SETTING_REAL_CONFIRMED">
+                  <img src="images/story-studio/book-red.svg" alt="icon">
+                  <div class="name">Infected story</div>
+                  <div class="description">Watch the Infected cases in the World</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="config-item setting" data-setting="SETTING_REAL_ACTIVE">
+                  <img src="images/story-studio/book-blue.svg" alt="icon">
+                  <div class="name">Active story</div>
+                  <div class="description">Watch the Active cases in the World</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="config-item setting" data-setting="SETTING_REAL_RECOVERED">
+                  <img src="images/story-studio/book-green.svg" alt="icon">
+                  <div class="name">Recover story</div>
+                  <div class="description">Watch the Recover cases in the World</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="config-item setting" data-setting="SETTING_REAL_DEATHS">
+                  <img src="images/story-studio/book-purple.svg" alt="icon">
+                  <div class="name">Deaths story</div>
+                  <div class="description">Watch the Deaths cases in the World</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Auto Story Panel -->
+      <div id="auto-story-manager" class="tab-pane fade" role="tabpanel">
+        <div class="d-flex flex-column" style="height: calc(100vh - 4px);">
+          <div class="tab-title">
+            <h4>Auto Story Manager</h4>
+            <a tabindex="0" class="help-center"></a>
+          </div>
+          <div id="rule-wrapper" class="tab-details">
+            <div class="js-custom-scrollbar">
+              <div class="js-rule-container"></div>
+            </div>
+          </div>
+          <div class="tab-actions">
+            <a id="add-rule" href="#" role="button" tabindex="0" class="btn btn-outline-success btn-sm">
+              <i class="fa fa-plus"></i> Add rule
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Manual Story Panel -->
+      <div id="manual-story" class="tab-pane fade" role="tabpanel">
+        <div class="d-flex flex-column" style="height: calc(100vh - 4px);">
+          <div class="tab-title">
+            <h4>Manual Story Manager</h4>
+            <a tabindex="0" class="help-center"></a>
+          </div>
+          <div id="story-wrapper" class="tab-details">
+            <div class="js-custom-scrollbar">
+              <div class="story-container"></div>
+            </div>
+          </div>
+          <div class="tab-actions">
+            <a id="add-story" href="#" role="button" tabindex="0" class="btn btn-outline-success btn-sm">
+              <i class="fa fa-plus"></i> Add story
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Country mode Panel -->
+      <div id="country-mode" class="tab-pane fade show active" role="tabpanel">
+        <div class="d-flex flex-column" style="height: calc(100vh - 4px);">
+          <div class="tab-title">
+            <h4>Country Mode</h4>
+          </div>
+          <div class="tab-details" style="padding: 2px 15px;">
+            <div class="row no-gutters">
+              <div class="col-6">
+                <div class="config-item country-mode-item" data-country="United States of America">
+                  <img src="images/flags/us.svg" alt="icon">
+                  <div class="name">USA</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="config-item country-mode-item" data-country="Japan">
+                  <img src="images/flags/jp.svg" alt="icon">
+                  <div class="name">Japan</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="config-item country-mode-item" data-country="Vietnam">
+                  <img src="images/flags/vn.svg" alt="icon">
+                  <div class="name">Viet Nam</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Settings Panel -->
+      <div id="setting" class="tab-pane fade" role="tabpanel">
+        <div class="d-flex flex-column" style="height: calc(100vh - 4px);">
+          <div class="tab-title">
+            <h4>Setting Map</h4>
+          </div>
+          <div class="tab-details">
+            <div class="js-custom-scrollbar" style="padding: 1px 15px;">
+              <!-- Map Tile setting -->
+              <h5>Map Tile</h5>
+              <div class="row no-gutters">
+                <div class="col-6">
+                  <div class="config-item map-tile"
+                    data-map="https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png">
+                    <img src="images/story-studio/map1.png" alt="icon">
+                    <div class="name">Map 1</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="config-item map-tile"
+                    data-map="https://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png">
+                    <img src="images/story-studio/map2.png" alt="icon">
+                    <div class="name">Map 2</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="config-item map-tile"
+                    data-map="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}">
+                    <img src="images/story-studio/map3.png" alt="icon">
+                    <div class="name">Map 3</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="config-item map-tile"
+                    data-map="http://www.google.com/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}">
+                    <img src="images/story-studio/map4.png" alt="icon">
+                    <div class="name">Map 4</div>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <!-- Item Display setting -->
+              <h5>Item Display</h5>
+              <div class="row no-gutters">
+                <div class="col-6">
+                  <div class="config-item item-selected" data-item="confirmed">
+                    <img src="images/icons/confirmed.svg" alt="icon">
+                    <div class="name">Confirmed</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="config-item item-selected" data-item="active">
+                    <img src="images/icons/active.svg" alt="icon">
+                    <div class="name">Active</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="config-item item-selected" data-item="recovered">
+                    <img src="images/icons/recovered.svg" alt="icon">
+                    <div class="name">Recovered</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="config-item item-selected" data-item="deaths">
+                    <img src="images/icons/deaths.svg" alt="icon">
+                    <div class="name">Deaths</div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <!-- Radius Range setting -->
+              <h5>Radius Range</h5>
+              <div class="row">
+                <div class="col-12">
+                  <input type="text" class="js-range-slider" />
+                </div>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map Container -->
+  <div class="map-container">
+    <!-- Global Summary -->
+    <div id="global-summary"></div>
+
+    <!-- Story Map -->
+    <div id="global-map"></div>
+
+    <!-- Player Controller -->
+    <div class="player-controller">
+      <div id="story-player" class="player">
+        <div class="player-control-button move-to-first-button"></div>
+        <div class="player-control-button previous-button"></div>
+        <div class="player-control-button play-button"></div>
+        <div class="player-control-button next-button"></div>
+        <div class="player-control-button move-to-end-button"></div>
+        <div class="player-control-button speed-button x1-fps"></div>
+      </div>
+    </div>
+
+    <!-- Calendar -->
+    <div id="bypass-date" class="bypass-date">
+      <div class="date-count">
+        <div class="text numberFont" data-i18n="day">DAY</div>
+        <div class="number numberFont"></div>
+      </div>
+      <div class="current-date numberFont"></div>
+    </div>
+  </div>
+
+  <!-- Global Story -->
+  <div id="global-story" class="global-story restart-animation">
+    <div class="speaker"></div>
+    <div class="title"></div>
+    <div class="description"></div>
+  </div>
+
+  <!-- CountryModal -->
+  <div id="country-modal" class="modal fade country-modal" tabindex="-1" role="dialog" style="display: none;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body js-custom-scrollbar">
+          <div class="container">
+            <div class="mb-5 mt-4 d-flex mobile-wrap">
+              <!-- Flag and Calendar -->
+              <div class="flag-datetime-container">
+                <div class="flag">
+                  <div class="country-name">&nbsp;</div>
+                </div>
+                <div class="datetime">
+                  <div class="date-count">
+                    <span class="previous"><i class="fas fa-caret-left"></i></span>
+                    <span class="next"><i class="fas fa-caret-right"></i></span>
+                    <div class="text numberFont" data-i18n="day">Day</div>
+                    <div class="js-date-count-text number numberFont"></div>
+                  </div>
+                  <div class="current-date numberFont" data-toggle="datepicker">&nbsp;</div>
+                </div>
+              </div>
+              <!-- Items summary -->
+              <div class="statics">
+                <div class="row">
+                  <!-- Confirmed -->
+                  <div class="col-lg-6 col-xl-6 col-sm-12">
+                    <div class="info-item">
+                      <div class="type-icon"><img src="images/icons/confirmed.svg" class="img-icon"></div>
+                      <div class="content">
+                        <div class="js-confirmed-count number numberFont text-confirmed"></div>
+                        <div class="text" data-i18n="confirmed">confirmed</div>
+                      </div>
+                      <i class="js-daily-confirmed-arrow arrow-icon"></i>
+                      <div class="increase">
+                        <div class="js-daily-confirmed-count number numberFont"></div>
+                        <div class="js-daily-confirmed-percent text numberFont"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Active -->
+                  <div class="col-lg-6 col-xl-6 col-sm-12">
+                    <div class="info-item">
+                      <div class="type-icon"><img src="images/icons/active.svg" class="img-icon"></div>
+                      <div class="content">
+                        <div class="js-active-count number numberFont text-active"></div>
+                        <div class="text" data-i18n="active">active</div>
+                      </div>
+                      <i class="js-daily-active-arrow arrow-icon"></i>
+                      <div class="increase">
+                        <div class="js-daily-active-count number numberFont"></div>
+                        <div class="js-daily-active-percent text numberFont"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Recovered -->
+                  <div class="col-lg-6 col-xl-6 col-sm-12">
+                    <div class="info-item">
+                      <div class="type-icon"><img src="images/icons/recovered.svg" class="img-icon"></div>
+                      <div class="content">
+                        <div class="js-recovered-count number numberFont text-recovered"></div>
+                        <div class="text" data-i18n="recovered">recovered</div>
+                      </div>
+                      <i class="js-daily-recovered-arrow arrow-icon"></i>
+                      <div class="increase">
+                        <div class="js-daily-recovered-count number numberFont"></div>
+                        <div class="js-daily-recovered-percent text numberFont"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Deaths -->
+                  <div class="col-lg-6 col-xl-6 col-sm-12">
+                    <div class="info-item">
+                      <div class="type-icon"><img src="images/icons/deaths.svg" class="img-icon"></div>
+                      <div class="content">
+                        <div class="js-deaths-count number numberFont text-deaths"></div>
+                        <div class="text" data-i18n="deaths">deaths</div>
+                      </div>
+                      <i class="js-daily-deaths-arrow arrow-icon"></i>
+                      <div class="increase">
+                        <div class="js-daily-deaths-count number numberFont"></div>
+                        <div class="js-daily-deaths-percent text numberFont"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="day-player" class="day-player mb-4"></div>
+
+            <!-- Pictogram chart -->
+            <div class="pictogram-chart mb-5">
+              <p class="mb-0"><b data-i18n="pictogram">PICTOGRAM</b></p>
+              <div class="js-human-chart"></div>
+              <div>
+                <i class="fas fa-male"></i>
+                <span class="pictogram-legend">= 1000</span>
+                <span class="pictogram-legend" data-i18n="people">People</span>
+              </div>
+            </div>
+            
+            <!-- Time Series Chart -->
+            <div class="chart-container mb-5">
+              <p class="country mb-0" data-i18n="time-series">TIME SERIES</p>
+              <div class="js-line-chart-legend custom-legend"></div>
+              <div class="chart line-chart">
+                <canvas class="js-line-chart"></canvas>
+              </div>
+            </div>
+            <!-- Daily Data Chart -->
+            <div class="chart-container mb-4">
+              <p class="country mb-0" data-i18n="daily-data">DAILY DATA</p>
+              <div class="js-bar-chart-legend custom-legend"></div>
+              <div class="chart bar-chart">
+                <canvas class="js-bar-chart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn-close no-outline" data-dismiss="modal"></button>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal share-->
+  <div id="share-modal" class="modal fade country-modal" tabindex="-1" role="dialog" style="display: none;">
+    <div class="modal-dialog" style="max-width: 700px;" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="d-flex justify-content-around w-100">
+            <div class="share-icon">
+              <a class="icon facebook" title="Facebook" target="_blank" rel="noopener" href="https://www.facebook.com/sharer.php?u=https://coronastory.io/"></a>
+              <div class="title">Facebook</div>
+            </div>
+            <div class="share-icon">
+              <a class="icon twitter" title="Twitter" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://coronastory.io/"></a>
+              <div class="title">Twitter</div>
+            </div>
+            <div class="share-icon">
+              <a class="icon email" title="Email" href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://coronastory.io/"></a>
+              <div class="title">Email</div>
+            </div>
+            <div class="share-icon">
+              <a id="copy-link" class="icon link" title="Copy URL" href="https://coronastory.io/"></a>
+              <div class="title">Copy URL</div>
+            </div>
+          </div>
+          <div class="text-center">
+            <input id="copy-link-input" class="copy-link-input form-control" type="text" readonly="readonly" value="https://coronastory.io/" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Embed -->
+  <div class="embed-container">
+    <h3 data-i18n="embed-page">Embed Page</h3>
+    <hr>
+    <div class="embed-size">
+      <p class="mb-0" data-i18n="page-size">Page Size</p>
+      <label for="embed-input-width" class="sr-only">Embed Width</label>
+      <input id="embed-input-width" type="number" class="embed-input width" value="900">
+      <span>&times;</span>
+      <label for="embed-input-height" class="sr-only">Embed Width</label>
+      <input id="embed-input-height" type="number" class="embed-input height" value="600">
+    </div>
+    <label for="embed-input-link" class="sr-only"></label>
+    <input id="embed-input-link" type="text" class="embed-link" spellcheck="false" value='<iframe src="https://coronastory.io/" width="900" height="600" frameborder="0" style="border:0;" tabindex="0"></iframe>'>
+    <div style="font-size: 14px;" class="embed-copied"></div>
+  </div>
+
+  <!-- Mobile RankingBar -->
+  <div id="mobile-ranking">
+    <div id="open-glb-popup-btn" class="global-summary-item"></div>
+    <label for="search-box-mobile" class="sr-only">Search</label>
+    <input id="search-box-mobile" class="no-outline" type="search" name="search-box" autocomplete="off" placeholder="Search..." />
+    <div id="mobile-ranking-container" class="ranking-container"></div>
+    <div class="btn-close no-outline"></div>
+  </div>
+
+  <!-- PC RankingBar -->
+  <div id="pc-ranking">
+    <input id="search-box" type="search" class="search-box" name="search-box" placeholder="Search..." />
+    <div id="ranking-container" class="ranking-container"></div>
+  </div>
+
+  <!-- Rule Edit Template -->
+  <div class="rule-item-tmp d-none">
+    <div class="add-rule-popover">
+      <form>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Item:</label>
+          <div class="col-8">
+            <select class="form-control form-control-sm" name="item">
+              <option value="confirmed">Confirmed</option>
+              <option value="active">Active</option>
+              <option value="recovered">Recovered</option>
+              <option value="deaths">Deaths</option>
+              <option value="dailyConfirmed">Daily Confirmed</option>
+              <option value="dailyActive">Daily Active</option>
+              <option value="dailyRecovered">Daily Recovered</option>
+              <option value="dailyDeaths">Daily Deaths</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Operator:</label>
+          <div class="col-8">
+            <select class="form-control form-control-sm" name="operator">
+              <option value=">">&gt;</option>
+              <option value=">=">&gt;=</option>
+              <option value="<">&lt;</option>
+              <option value="<=">&lt;=</option>
+              <option value="==">==</option>
+              <option value="!=">!=</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Value:</label>
+          <div class="col-8">
+            <input class="form-control form-control-sm" type="number" name="value">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Title:</label>
+          <div class="col-8">
+            <input class="form-control form-control-sm" type="text" name="title">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Message:</label>
+          <div class="col-8">
+            <input class="form-control form-control-sm" type="text" name="message">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Duration:</label>
+          <div class="col-8">
+            <input class="form-control form-control-sm" type="number" name="duration" value="1500">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Block:</label>
+          <div class="col-8">
+            <input type="checkbox" name="block">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Stop:</label>
+          <div class="col-8">
+            <input type="checkbox" name="stop">
+          </div>
+        </div>
+        <div>
+          <button type="button" class="btn btn-success btn-sm submit-button"><i class="fa fa-save"></i> Save</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm cancel-button">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Story Edit Template -->
+  <div class="story-item-tmp d-none">
+    <div class="add-story-popover">
+      <form>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Type:</label>
+          <div class="col-8">
+            <select class="form-control form-control-sm" name="type">
+              <option value="global">Global</option>
+              <option value="local">Local</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Date:</label>
+          <div class="col-8">
+            <input class="form-control form-control-sm" type="text" name="date" data-toggle="datepicker">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Title:</label>
+          <div class="col-8">
+            <input class="form-control form-control-sm" type="text" name="title">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Message:</label>
+          <div class="col-8">
+            <input class="form-control form-control-sm" type="text" name="description">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Duration:</label>
+          <div class="col-8">
+            <input class="form-control form-control-sm" type="number" name="duration" value="1500">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Country:</label>
+          <div class="col-8">
+            <select class="form-control form-control-sm" name="countryName">
+              <option></option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Block:</label>
+          <div class="col-8">
+            <input class="checkbox" type="checkbox" name="block">
+          </div>
+        </div>
+        <div>
+          <button type="button" class="btn btn-success btn-sm submit-button"><i class="fa fa-save"></i> Save</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm cancel-button">Cancel</button>
+        </div>
+        <input type="hidden" name="countryCode">
+        <input type="hidden" name="latlng">
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha256-aAr2Zpq8MZ+YA/D6JtRD3xtrwpEz2IqOS+pWD/7XKIw=" crossorigin="anonymous" />
+  <!-- Bootstrap Select -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+  
+  <!-- SimpleBar -->
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@5.1.0/dist/simplebar.css" />
+  
+  <!-- ChartJS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+
+  <!-- Fengyuanchen Datepicker -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.9/datepicker.min.css" integrity="sha256-ZvEtNAd4i8k2hUczGFP3tFDwBRjw3WUTUagRUP7WcEw=" crossorigin="anonymous" />
+
+  <!-- Ion RangeSlider -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+  <!-- Leaflet TimeDimension -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.control.min.css" />
+
+  <!-- Icheck -->
+  <link rel="stylesheet" href="vendors/icheck/flat/green.css">
+
+  <!-- Sinka CSS -->
+  <link rel="stylesheet" href="css/map.css">
+  <link rel="stylesheet" href="css/story-player.css">
+  <link rel="stylesheet" href="css/global-summary.css">
+  <link rel="stylesheet" href="css/rankingbar.css">
+  <link rel="stylesheet" href="css/country-modal.css">
+  <link rel="stylesheet" href="css/common.css">
+</body>
+
+</html>
