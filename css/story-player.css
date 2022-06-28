@@ -8,7 +8,7 @@
 .timecontrol-slider .knob:after { display: none;}
 
 .player-controller { position: absolute; z-index: 1010; bottom: 10px; left: 10px;}
-.player { display: flex; }
+.player { display: flex; visibility: hidden; }
 .move-to-top-left { animation: movetotopleft 1s ease 0s; animation-direction: normal;}
 
 /* new play button */

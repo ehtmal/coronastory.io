@@ -41,6 +41,7 @@
   <!-- Sinka important CSS -->
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/screen-main.css">
 
   <!-- Sinka Resources -->
   <script defer type="text/javascript" src="js/resources/station-data.js"></script>
@@ -165,8 +166,43 @@
       </div>
     </div>
   </div>
-  
 
+  <!-- Start Overlay -->
+  <div class="first-time">
+    <div class="first-time-play-button">
+      <button class='first-time-button'><span class="sr-only">Play story</span></button>
+    </div>
+    <div class="overlay"></div>
+    <p class="description">Let's see how Corona Virus affect the World...</p>
+  </div>
+
+  <!-- End Overlay -->
+  <div class="help-popup">
+    <div class="involve-overlay js-close-overlay"></div>
+    <div class="involve-content">
+      <h2 class="caption">And the story still going...</h2>
+      <p class="caption-description">
+        How is the story turn out is depend on your action.
+      </p>
+      <div class="suggest-list">
+        <a class="link" href="story-studio.html">
+          <div class="suggest-item">
+            <img class="img" src="./images/heroes/red-pill-hero.png" alt="" />
+            <h6 class="text">See how deep the rabbit hole goes.</h6>
+          </div>
+        </a>
+        <a class="link js-close-overlay" href="#">
+          <div class="suggest-item">
+            <img class="img" src="./images/heroes/blue-pill-hero.png" alt="" />
+            <h6 class="text">The story end here, feel free to browing our site.</h6>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  
   <!-- Global Summary -->
   <div id="global-summary"></div>
 

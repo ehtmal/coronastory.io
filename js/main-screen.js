@@ -46,6 +46,29 @@ var MainScreen = (function () {
       $countryModal.show('GLOBAL', 'glb', $storyPlayer.getTime());
     });
 
+    // First-time Play button click
+    $('.first-time-play-button').on('click', function () {
+      // Marked as seen
+      sessionStorage.setItem("isVisited", true);
+      // Hide controls and start play
+      $('.first-time .first-time-button').addClass('paused');
+      $('.first-time .description').hide();
+      $('.first-time .overlay').fadeOut(100);
+      $('.first-time .first-time-play-button').addClass('move-to-top-left'); // 1s
+      setTimeout(function () {
+        $('.first-time .first-time-play-button').hide();
+        $('.player').css("visibility", "visible");
+        $('.leaflet-bar-timecontrol').css("visibility", "visible");
+        $storyPlayer.start();
+      }, 1000);
+    });
+
+    // Close help-popup when time-player finish
+    $(document).on('click', '.js-close-overlay', function (e) {
+      e.preventDefault();
+      $('.help-popup').hide();
+    });
+    
   }
 
   /** Repository fetch data done handler */
@@ -95,6 +118,18 @@ var MainScreen = (function () {
     $storyMap.updateLocationsByTime(timeIndex);
   }
 
+  /** Check guest is visted website yet */
+  MainScreen.prototype.visitedCheck = function () {
+    let isVisited = sessionStorage.getItem("isVisited");
+    if (isVisited == undefined || isVisited == false) {
+      $('.first-time').css("visibility", "visible");
+    }
+    else {
+      $('.player').css("visibility", "visible");
+      $('.leaflet-bar-timecontrol').css("visibility", "visible");
+    }
+  }  
+
   return MainScreen;
 })();
 
@@ -103,4 +138,5 @@ $(function () {
   Chart.platform.disableCSSInjection = true;
   Chart.defaults.global.defaultFontFamily = 'myFont';
   var mainScreen = new MainScreen();
+  mainScreen.visitedCheck();
 });
