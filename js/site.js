@@ -95,6 +95,12 @@ $(function () {
 
   initScrollBar();
   initDatePicker('[data-toggle="datepicker"]');
+
+  // Check display story studio menu
+  var isVisited = localStorage.getItem("isVisitedStoryStudio");
+  if (isVisited) {
+    $("#left-side-bar .story-studio").removeClass("d-none");
+  }  
 });
 
 /** Init Datepicker */
