@@ -1,0 +1,14 @@
+#global-summary { position: fixed; top: 0; left: 80px; display: flex;  z-index: 500;}
+#global-summary .global-summary-item { position: relative; margin-right: 10px; cursor: pointer; font-weight: bold;}
+#global-summary .chart { width: 200px; height: 80px; position: relative;}
+#global-summary .content {  position: absolute; top: 25px; width: 100%; line-height: 30px;}
+#global-summary .content .icon { display: inline-block;  width: 30px; height: 30px; vertical-align: bottom;}
+
+.global-summary-item.confirmed .content .icon {background: url(../images/icons/confirmed.svg) center/cover no-repeat;}
+.global-summary-item.active .content .icon { background: url(../images/icons/active.svg) center/cover no-repeat;}
+.global-summary-item.recovered .content .icon { background: url(../images/icons/recovered.svg) center/cover no-repeat;}
+.global-summary-item.deaths .content .icon { background: url(../images/icons/deaths.svg) center/cover no-repeat;}
+.global-summary-item.confirmed .content {color: rgb(255, 65, 108);}
+.global-summary-item.active .content { color: rgb(40, 110, 255);}
+.global-summary-item.recovered .content {color: rgb(97, 206, 129);}
+.global-summary-item.deaths .content { color: rgb(134, 67, 230);}

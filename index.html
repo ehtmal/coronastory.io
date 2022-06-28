@@ -13,6 +13,10 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha256-OFRAJNoaD8L3Br5lglV7VyLRf0itmoBzWUoM+Sji4/8=" crossorigin="anonymous"></script>
   <!-- DayJS -->
   <script defer src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <!-- ChartJS -->
+  <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <!-- CountUp-->
+  <script defer type="text/javascript" src="vendors/countUp.min.js"></script>
 
   <!-- Sinka important CSS -->
   <link rel="stylesheet" href="css/site.css">
@@ -21,14 +25,18 @@
   <script defer type="text/javascript" src="js/resources/station-data.js"></script>
   <!-- Sinka Classes -->
   <script defer type="text/javascript" src="js/utilities/date-utility.js"></script>
-  <script defer type="text/javascript" src="js/classes/bypass-date.js"></script>
+  <script defer type="text/javascript" src="js/utilities/string-utility.js"></script>
   <script defer type="text/javascript" src="js/classes/repository.js"></script>
+  <script defer type="text/javascript" src="js/classes/bypass-date.js"></script>
+  <script defer type="text/javascript" src="js/classes/global-summary.js"></script>
   <!-- Sinka Scripts -->
   <script defer type="text/javascript" src="js/main-screen.js"></script>
   
 </head>
 
 <body class="d-flex">
+  <!-- Global Summary -->
+  <div id="global-summary"></div>
 
   <!-- Map -->
   <div id="global-map"></div>
@@ -43,9 +51,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
   <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+  <!-- ChartJS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
 
   <!-- Sinka lesser CSS -->
-  <link rel="stylesheet" href="css/common.css">  
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/global-summary.css">
 </body>
 
 </html>
