@@ -10,6 +10,7 @@ var $globalStoryManager = null;
 var $storyMap = null;
 var $storyPlayer = null;
 var $rankingBar = null;
+var $rankingBarMobile = null;
 var $countryModal = null;
 
 /** Class MainScreen */
@@ -36,9 +37,24 @@ var MainScreen = (function () {
       $storyPlayer.updateStories($globalStoryManager.getAllStories());
     });
 
-    // Search RankingBar
+    // Action when click search box in mobile.
+    $('#mobile-ranking #search-box-mobile').on('focus', function () {
+      $('#mobile-ranking').addClass('show');
+    });
+    // Action when close search results.
+    $('#mobile-ranking .btn-close').on('click', function () {
+      $('#mobile-ranking').removeClass('show');
+    });
+
+    // Search RankingBar PC
     $('#search-box').on('keyup', Utility.debounce(function () {
       $rankingBar.search($(this).val());
+      $('#search-box-mobile').val($(this).val());
+    }, 200));
+    // Search RankingBar mobile
+    $('#mobile-ranking #search-box-mobile').on('keyup', Utility.debounce(function () {
+      $rankingBarMobile.search($(this).val());
+      $('#search-box').val($(this).val());
     }, 200));
 
     // Global DetailsPopup events
@@ -81,6 +97,8 @@ var MainScreen = (function () {
     // Init [RankingBar]
     $rankingBar = new RankingBar('#ranking-container', "#story-player", data.timeSeriesData, data.sidebarData);
     $rankingBar.update(0);
+    $rankingBarMobile = new RankingBar('#mobile-ranking-container', "#story-player", data.timeSeriesData, data.sidebarData, { enableSimpleBar: true });
+    $rankingBarMobile.update(0);
     // Init [CountryModal]
     $countryModal = new CountryModal("#country-modal", data.timeSeriesData, data.globalData, data.dateArray);
 
