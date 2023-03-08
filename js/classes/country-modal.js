@@ -110,7 +110,7 @@ var CountryModal = (function () {
     this.$container.find('.flag').attr('title', countryName);
     var url = FLAGS_URL.replace('{countryCode}', countryCode);
     this.$container.find('.flag').css('--url', 'url(' + url + ')');
-    if (countryName === 'GLOBAL')
+    if (countryName === 'GLOBAL' ||   countryName === 'Winter Olympics 2022')
       this.$container.find('.flag').css('background-size', 'contain');
     else
       this.$container.find('.flag').css('background-size', 'cover');

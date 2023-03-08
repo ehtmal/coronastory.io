@@ -17,10 +17,12 @@ var RankingBar = (function () {
     for (let country in this.timeSeriesData) {
       let station = STATION_DATA.find(function (obj) { return obj.name === country });
       let flag = FLAGS_URL.replace('{countryCode}', station.country_code);
+      let style = ''
+    if(flag.includes('winterolympics2022')) style = 'background-size: contain;'
       html += '<div class="country-item" data-country="' + country + '" style="opacity: 0">' +
                 '<div class="country-item-detail">' +
                   '<div class="index numberFont">0</div>' +
-                  '<div class="flag" style="--url: url(' + flag + ');"></div>' +
+                  '<div class="flag" style="--url: url(' + flag + ');'+style+'"></div>' +
                   '<div class="content">' +
                     '<div class="country-name">' + country + '</div>' +
                   '</div>' +
