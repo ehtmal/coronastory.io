@@ -122,7 +122,7 @@ var StoryMap = (function () {
       marker = L.marker(station.latlng, {
         icon: L.icon({
           iconUrl: `images/flags/${
-            country === "MS Zaandam" ? "mszaandam" : country === "Diamond Princess" ? "diamondprincess" : country == "Summer Olympics 2020" ?  "olympics" : 'winterOlympics2022'
+            country === "MS Zaandam" ? "mszaandam" : country === "Diamond Princess" ? "diamondprincess" : country == "Summer Olympics 2020" ?  "olympics" : 'winterolympics2022'
           }.svg`,
           iconSize: [radius ? 20 : 0, radius ? 20 : 0],
         }),
@@ -182,7 +182,7 @@ var StoryMap = (function () {
           layer.setIcon(
             L.icon({
               iconUrl: `images/flags/${
-                country === "MS Zaandam" ? "mszaandam" : country === "Diamond Princess" ? "diamondprincess" : country == "Summer Olympics 2020" ?  "olympics" : 'winterOlympics2022'
+                country === "MS Zaandam" ? "mszaandam" : country === "Diamond Princess" ? "diamondprincess" : country == "Summer Olympics 2020" ?  "olympics" : 'winterolympics2022'
               }.svg`,
               iconSize: [radius ? 20 : 0, radius ? 20 : 0],
             })

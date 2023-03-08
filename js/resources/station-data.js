@@ -3184,7 +3184,7 @@ var STATION_DATA = [
       116.396446
     ],
     "name": "Winter Olympics 2022",
-    "country_code": "winterOlympics2022",
+    "country_code": "winterolympics2022",
     "capital": ""
   }
 ];
