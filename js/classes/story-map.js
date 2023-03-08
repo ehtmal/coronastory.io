@@ -118,11 +118,11 @@ var StoryMap = (function () {
     let radius = this.calculateRadius(timeSeriesData[country][0][this.displayValue]);
     let color = this.getDisplayColor();
     let marker;
-    if (country === "MS Zaandam" || country === "Diamond Princess" || country == "Summer Olympics 2020") {
+    if (country === "MS Zaandam" || country === "Diamond Princess" || country == "Summer Olympics 2020" || country == "Winter Olympics 2022") {
       marker = L.marker(station.latlng, {
         icon: L.icon({
           iconUrl: `images/flags/${
-            country === "MS Zaandam" ? "mszaandam" : country === "Diamond Princess" ? "diamondprincess" : "olympics"
+            country === "MS Zaandam" ? "mszaandam" : country === "Diamond Princess" ? "diamondprincess" : country == "Summer Olympics 2020" ?  "olympics" : 'winterOlympics2022'
           }.svg`,
           iconSize: [radius ? 20 : 0, radius ? 20 : 0],
         }),
@@ -178,11 +178,11 @@ var StoryMap = (function () {
 
         let radius = self.calculateRadius(self.timeSeriesData[country][timeIndex][self.displayValue]);
         let color = self.getDisplayColor();
-        if (country === "MS Zaandam" || country === "Diamond Princess" || country == "Summer Olympics 2020") {
+        if (country === "MS Zaandam" || country === "Diamond Princess" || country == "Summer Olympics 2020" || country == "Winter Olympics 2022") {
           layer.setIcon(
             L.icon({
               iconUrl: `images/flags/${
-                country === "MS Zaandam" ? "mszaandam" : country === "Diamond Princess" ? "diamondprincess" : "olympics"
+                country === "MS Zaandam" ? "mszaandam" : country === "Diamond Princess" ? "diamondprincess" : country == "Summer Olympics 2020" ?  "olympics" : 'winterOlympics2022'
               }.svg`,
               iconSize: [radius ? 20 : 0, radius ? 20 : 0],
             })
@@ -207,9 +207,11 @@ var StoryMap = (function () {
     let dailyActive = Math.abs(timeData.dailyActive);
     let dailyRecovered = Math.abs(timeData.dailyRecovered);
     let dailyDeaths = Math.abs(timeData.dailyDeaths);
+    let style = ''
+    if(flag.includes('winterolympics2022')) style = 'background-size: contain;'
     let tooltipHtml =
       '<div class="tooltip-container">' +
-        '<div class="flag" style="--url: url(' + flag + ');"></div>' +
+        '<div class="flag" style="--url: url(' + flag + ');'+style+'"></div>' +
         '<div class="country-name">' + country + "</div>" +
         '<div class="info-container">' +
         '<div class="info-item confirmed">' +

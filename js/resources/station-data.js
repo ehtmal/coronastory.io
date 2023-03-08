@@ -1,4 +1,4 @@
-var STATION_DATA = [
+var STATION_DATA = [ 
   {
     "timezones": [
       "America/Aruba"
@@ -1545,6 +1545,18 @@ var STATION_DATA = [
     "name": "Korea, South",
     "country_code": "KR",
     "capital": "Seoul"
+  },
+  {
+    "timezones": [
+        "Asia/Pyongyang"
+    ], 
+    "latlng": [
+        40, 
+        127
+    ], 
+    "name": "Korea, North", 
+    "country_code": "KP", 
+    "capital": "Pyongyang"
   },
   {
     "timezones": ["Europe/Belgrade"],
@@ -3163,6 +3175,16 @@ var STATION_DATA = [
     ],
     "name": "Summer Olympics 2020",
     "country_code": "Olympics",
+    "capital": ""
+  },
+  {
+    "timezones": [],
+    "latlng": [
+      39.992935,
+      116.396446
+    ],
+    "name": "Winter Olympics 2022",
+    "country_code": "winterOlympics2022",
     "capital": ""
   }
 ];
